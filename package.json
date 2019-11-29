@@ -1,0 +1,29 @@
+{
+  "name": "koa2-demo",
+  "version": "1.0.0",
+  "description": "koa2 server",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "set NODE_ENV=development&& node --use_strict app.js --dev",
+    "build": "set NODE_ENV=production&& node --use_strict app.js --prod"
+  },
+  "author": "xuyy (wechat:uta2012)",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.11.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0",
+    "mime": "^2.4.4",
+    "mysql2": "^2.0.1",
+    "mz": "^2.7.0",
+    "node-uuid": "^1.4.8",
+    "nunjucks": "^3.2.0",
+    "sequelize": "^5.21.2",
+    "ws": "^7.2.0"
+  },
+  "devDependencies": {
+    "mocha": "^6.2.2",
+    "supertest": "^4.0.2"
+  }
+}
