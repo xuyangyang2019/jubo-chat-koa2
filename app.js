@@ -5,6 +5,7 @@ const bodyParser = require('koa-bodyparser'); // 解析原始request请求
 
 const rest = require('./middleware/rest'); // rest中间件
 const controller = require('./middleware/controller'); // 扫描注册Controller，并添加router:
+const templating = require('./middleware/templating'); // 扫描注册Controller，并添加router:
 const { historyApiFallback } = require('koa2-connect-history-api-fallback');
 
 // const websocketServer = require('./websocket/websocketServer'); // websocket中间件
@@ -48,6 +49,13 @@ if (!isProduction) {
 
 // parse request body:
 app.use(bodyParser());
+
+// add nunjucks as view:
+// templating('views', {
+templating('views', {
+    noCache: !isProduction,
+    watch: !isProduction
+}, app);
 
 // bind .rest() for ctx:
 app.use(rest.restify());
