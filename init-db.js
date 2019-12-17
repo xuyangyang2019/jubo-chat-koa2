@@ -32,6 +32,18 @@ model.sync().then(async () => {
     });
     console.log('created: ' + JSON.stringify(user3));
 
+    let Articles = model.Articles;
+    for (let i = 0; i < 100; i++) {
+        let article = await Articles.create({
+            title: `test title${i}`,
+            content: `test content${i}`,
+            desc: `test desc${i}`,
+            comments: '{}',
+            tags: `test${i}`
+        });
+        console.log('created: ' + JSON.stringify(article));
+    }
+
     process.exit(0);
 
 }).catch((err) => {
