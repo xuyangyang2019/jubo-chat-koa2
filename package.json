@@ -5,6 +5,9 @@
   "main": "app.js",
   "scripts": {
     "test": "mocha",
+    "dev": "nodemon ./app.js",
+    "debug": "nodemon --inspect ./app.js",
+    "pm2": "pm2 start bin/run",
     "start": "set NODE_ENV=development&& node --use_strict app.js --dev",
     "build": "set NODE_ENV=production&& node --use_strict app.js --prod"
   },
@@ -19,7 +22,9 @@
     "mysql2": "^2.0.1",
     "mz": "^2.7.0",
     "node-uuid": "^1.4.8",
+    "nodemon": "^2.0.2",
     "nunjucks": "^3.2.0",
+    "pm2": "^4.2.1",
     "sequelize": "^5.21.2",
     "ws": "^7.2.0"
   },
